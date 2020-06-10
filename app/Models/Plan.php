@@ -11,11 +11,11 @@ class Plan extends Model
         'name',
         'description',
         'price',
-        'active'
+        'active',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at'];
+    //protected $hidden = [
+    //    'created_at',
+    //    'updated_at'];
 
 }
