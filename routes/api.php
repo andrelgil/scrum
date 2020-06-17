@@ -14,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/plans', 'Api\\PlanController@index');
-Route::get('/plans/{plan}','Api\\PlanController@show');
-Route::post('/plans','Api\\Plancontroller@store');
-Route::put('plans/{plan}', 'Api\\PlanController@update');
-Route::delete('plans/{plan}', 'Api\\PlanController@destroy');
+//Route::get('/plans', 'Api\\PlanController@index');
+//Route::get('/plans/{plan}','Api\\PlanController@show');
+//Route::post('/plans','Api\\Plancontroller@store');
+//Route::put('plans/{plan}', 'Api\\PlanController@update');
+//Route::delete('plans/{plan}', 'Api\\PlanController@destroy');
+
+//Route::resource('plans','Api\\PlanController');
+
+Route::resource('plans', 'Api\\PlanController')->except(['create',]);
 
 
 
