@@ -10,7 +10,7 @@ class PlanController extends Controller
 {
     public function index(Request $request)
     {
-        return Plan::all();
+        return Plan::with('groups')->get();
     }
 
     public function show(Plan $plan)

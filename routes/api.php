@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::resource('plans','Api\\PlanController');
 
-Route::resource('plans', 'Api\\PlanController')->except(['create',]);
+Route::resource('plans', 'Api\\PlanController')->except(['create','edit',]);
+Route::resource('groups', 'Api\\GroupController')->except(['create','edit',]);
 
 
 
