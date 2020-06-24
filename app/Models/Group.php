@@ -17,6 +17,4 @@ class Group extends Model
     {
         return $this->belongsTo(Plan::class);
     }
-
-
 }
