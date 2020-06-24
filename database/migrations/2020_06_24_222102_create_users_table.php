@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('rg',11);
             $table->string('username',50);
             $table->string('email',50);
-            $table->string('hash');
+            $table->string('password',20);
+            $table->string('hash')->nullable();
             $table->boolean('admin')->default(0);
             $table->timestamps();
 

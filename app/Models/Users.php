@@ -16,4 +16,9 @@ class Users extends Model
         'email',
         'password'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(Group::class);
+    }
 }
