@@ -15,3 +15,5 @@ class CompanySeeder extends Seeder
         factory(Company::class, 10)->create();
     }
 }
+
+

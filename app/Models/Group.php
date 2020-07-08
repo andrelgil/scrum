@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User;
 
 class Group extends Model
 {
@@ -12,6 +13,16 @@ class Group extends Model
         'name',
         'active'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function companies()
+    {
+        return $this->hasMany(Company::class);
+    }
 
     public function plan()
     {

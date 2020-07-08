@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class User extends Model
 {
     protected $table = 'users';
     protected $fillable = [
@@ -14,11 +14,13 @@ class Users extends Model
         'rg',
         'username',
         'email',
-        'password'
+        'password',
+        'hash',
+        'admin'
     ];
 
-    public function users()
+    public function users_contacts()
     {
-        return $this->hasMany(Group::class);
+        return $this->hasOne(UserContact::class);
     }
 }

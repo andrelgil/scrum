@@ -3,36 +3,33 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller{
+class UserController extends Controller{
 
     public function index()
     {
-        return Users::all();
+        return User::with('users_contacts')->get();
     }
-
 
     public function store(Request $request)
     {
-        return Users::create($request->all());
+        return User::create($request->all());
     }
 
-
-    public function show(Users $user)
+    public function show(User $user)
     {
         return $user;
     }
 
-
-    public function update(Request $request, Users $users)
+    public function update(Request $request, User $users)
     {
         $users->update($request->all());
         return $users;
     }
 
-    public function destroy(Users $users)
+    public function destroy(User $users)
     {
         $users->delete();
         return  response()->json(['result' => 'ok']);
